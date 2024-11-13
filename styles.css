@@ -1,6 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,10 +9,10 @@ body {
 
 #calculadora{
     width: 200px;
-    padding: 20px;
-    padding-bottom: 5px;
-    background-color: black;
+    padding: 10px 10px 20px 10px;
+    background-color: darkslategrey;
     border-radius: 10px;
+    border: 5px double black;
 }
 
 #grid {
@@ -22,6 +21,7 @@ body {
 }
 
 .bt {
+    font-size: 1rem;
     cursor: pointer;
     margin: 1px;
     background-color: #34495e;
@@ -36,6 +36,7 @@ body {
 #clear{ 
     width: 100%;
     background-color: #e74c3c;
+    margin-bottom: 2px;
 }
 #equal {
     margin-top: 2px;
@@ -45,7 +46,9 @@ body {
 
 #result {
     padding: 10px;
-    background-color: #27ae60;
-    border-radius: 10px;
+    background-color: #1c6139;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin: 10px 0;
 }
 

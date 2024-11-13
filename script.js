@@ -3,15 +3,15 @@ let prevInput = "";
 let op = null;
 
 const display = document.getElementById("result");
-const buttons = document.querySelectorAll(".bt");
+const buttons = document.getElementsByClassName("bt");
 
 function updateDisplay() {
     display.textContent = `Result: ${input}`;
 }
 
-buttons.forEach(button => {
+for (let button of buttons) {
     button.addEventListener("click", handleClick);
-});
+}
 
 function handleClick(evt) {
     const value = evt.target.textContent;
@@ -46,7 +46,7 @@ function handleClick(evt) {
             case "/":
                 if (current === 0) {
                     alert("Não é possível dividir por 0");
-                    return; 
+                    return;
                 } else {
                     result = prev / current;
                 }
