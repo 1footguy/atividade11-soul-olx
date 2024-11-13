@@ -6,7 +6,7 @@ const display = document.getElementById("result");
 const buttons = document.getElementsByClassName("bt");
 
 function updateDisplay() {
-    display.textContent = `Result: ${input}`;
+    display.textContent = input;
 }
 
 for (let button of buttons) {
