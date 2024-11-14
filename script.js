@@ -4,9 +4,11 @@ let op = null;
 
 const display = document.getElementById("result");
 const buttons = document.getElementsByClassName("bt");
+let toDisplay = "";
+
 
 function updateDisplay() {
-    display.textContent = input;
+    display.textContent = toDisplay;
 }
 
 for (let button of buttons) {
@@ -15,20 +17,23 @@ for (let button of buttons) {
 
 function handleClick(evt) {
     const value = evt.target.textContent;
-
     if (value >= "0" && value <= "9") {
         if (input === "0") {
             input = value;
+            toDisplay += `${value}`;                    
         } else {
             input += value;
+            toDisplay += value;   
         }
     } else if (value === "+" || value === "-" || value === "x" || value === "/" || value === "%") {
         prevInput = input;
         op = value;
         input = "0";
+        toDisplay += ` ${value} `;            
     } else if (value === "." && !input.includes(".")) {
         input += ".";
-    } else if (value === "=" && op && prevInput) {
+        toDisplay = input;            
+    } else if (value === "=" && op) {
         let result;
         const prev = parseFloat(prevInput);
         const current = parseFloat(input);
@@ -58,14 +63,19 @@ function handleClick(evt) {
                 alert("Operador inválido");
                 return;
         }
+        
         input = result.toString();
-        op = "";
+        toDisplay = input;            
+        op = null;
         prevInput = "";
     } else if (value === "Clear") {
         input = "0";
+        toDisplay = "";
         prevInput = "";
-        op = "";
+        op = null;
+        display.textContent = "0";
+        return;
     }
-
+    
     updateDisplay();
 }
