@@ -32,7 +32,7 @@ function handleClick(evt) {
         toDisplay += ` ${value} `;            
     } else if (value === "." && !input.includes(".")) {
         input += ".";
-        toDisplay = input;            
+        toDisplay += ".";            
     } else if (value === "=" && op) {
         let result;
         const prev = parseFloat(prevInput);
